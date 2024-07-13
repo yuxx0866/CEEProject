@@ -46,14 +46,11 @@ The result been saved to ./result/result.csv. I also paste the result below in c
 
 | WALLTYPE                                         | counts |
 |--------------------------------------------------|--------|
-| Brick                                            | 21     |
-| Concrete block                                   | 2      |
-| Other                                            | 1      |
-| Shingle(composition)                             | 9      |
-| Siding(aluminum, fiber, cement, vinyl, or steel) | 436    |
-| Stone                                            | 3      |
-| Stucco                                           | 32     |
-| Wood                                             | 100    |
+| Brick                                            | 5      |
+| Shingle(composition)                             | 6      |
+| Siding(aluminum, fiber, cement, vinyl, or steel) | 115    |
+| Stucco                                           | 17     |
+| Wood                                             | 31     |
 
 
 ### Contact Information

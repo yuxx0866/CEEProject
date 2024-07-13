@@ -227,17 +227,18 @@ def main():
     check_missing_values(cleanData)
     #Check for duplicates in the Data
     check_for_duplicates(cleanData)
-    #Check for outlier
+    #Check for outlier based on standard deviation
     detect_outliers_std(cleanData)
     cleanData.to_csv('./result/cleanData.csv', index = False)
 
     # Select specific columns to answer the question
-    selected_columns = ['ACEQUIPM_PUB', 'UGWARM', 'TYPEHUQ', 'WALLTYPE']  # List of column names to select
+    selected_columns = ['ACEQUIPM_PUB', 'UGWARM', 'TYPEHUQ', 'WALLTYPE', 'state_postal']  # List of column names to select
     selectedData = cleanData[selected_columns]
     selectedData = selectedData[
     (selectedData['ACEQUIPM_PUB'] == "Central air conditioner (includes central heat pump)") &
     (selectedData['UGWARM'] == "Yes") &
-    (selectedData['TYPEHUQ'].str.contains("Single-family"))]
+    (selectedData['TYPEHUQ'].str.contains("Single-family")) &
+    (selectedData['state_postal'] == 'MN')]
     print('---------------')
     # Group by 'WALLTYPE' and count occurrences
     grouped_data = selectedData.groupby('WALLTYPE').size().reset_index(name='counts')
